@@ -17,5 +17,5 @@ function sub(a,b){
 }
 
 
-const value = calculateArithmetic(1,2,"sum");
+const value = calculateArithmetic(1,2,"minus");
 console.log(value);
