@@ -29,11 +29,70 @@
 // }
 // setInterval(cod, 2000);
 
-function wellcome(name){
-  console.log(" hello " + name + ", sawagat hai apka");
-}
-wellcome("ram")
+// function to count from 30 to 0
 
-function wellcome (abc){
+
+// Define the countdown function
+// function countdown() {
+//   let count = 30; // Set initial count value
   
-}
+//   // Define the interval function to update the countdown
+//   const timer = setInterval(() => {
+//     console.log(count); // Output the current count
+//     count--; // Decrement the count
+    
+//     // Check if countdown is complete
+//     if (count < 0) {
+//       clearInterval(timer); // Stop the timer
+//       console.log("Countdown complete!"); // Output completion message
+//     }
+//   }, 1000); // Update the countdown every 1000ms (1 second)
+// }
+
+// // Start the countdown
+// countdown();
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const timerDisplay = document.getElementById('timer');
+  const startButton = document.getElementById('startButton');
+  let seconds = 30;
+  let countdownInterval;
+
+  function startCountdown() {
+    countdownInterval = setInterval(function() {
+      timerDisplay.textContent = seconds;
+      seconds--;
+
+      if (seconds < 0) {
+        clearInterval(countdownInterval);
+        alert('Countdown finished!');
+        seconds = 30; // Reset the timer to 30 seconds after it finishes
+        timerDisplay.textContent = seconds;
+      }
+    }, 1000);
+  }
+
+  startButton.addEventListener('click', startCountdown);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
