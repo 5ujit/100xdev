@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown</title>
+</head>
+<body>
+
+<h1>Countdown</h1>
+
+<p id="countdown"></p>
+
+<button onclick="startCountdown()">Start Countdown</button>
+
+<script>
+function startCountdown() {
+  let countdownElement = document.getElementById("countdown");
+
+  // Function to update the countdown
+  function updateCountdown(seconds) {
+    countdownElement.textContent = seconds;
+  }
+
+  // Countdown from 30 to 0
+  let seconds = 30;
+  updateCountdown(seconds);
+
+  let countdownInterval = setInterval(function() {
+    seconds--;
+    updateCountdown(seconds);
+    if (seconds === 0) {
+      clearInterval(countdownInterval);
+      countdownElement.textContent = "Countdown Finished!";
+    }
+  }, 1000);
+}
+</script>
+
+</body>
+</html>
