@@ -1,0 +1,3 @@
+create a counter in javascript (counts from30-0) count down
+create the timers b/w a settimeout call and the inner function  actually running 
+create a terminal clock (HH: MM: :SS)
