@@ -21,3 +21,11 @@ function greet(){
 
 }
 setInterval(greet, 5 *1000)
+
+
+
+let a1 =()=>{
+  console.log("hello");
+
+}
+setInterval(a1,1000)
