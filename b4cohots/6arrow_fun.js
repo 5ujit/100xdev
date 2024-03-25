@@ -66,7 +66,7 @@ console.log(anyChar ('appleMango'));
         // const check = isEven(88)
         // console.log(check);
         
-console.log("__________________👇👉➖___________________________________________________________");
+console.log("_____________________________________________________________________________");
 
 const ifEven= number=>{
   if(number % 2===0){
