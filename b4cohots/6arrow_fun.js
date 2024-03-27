@@ -107,5 +107,45 @@ console.log(okFound);
 
  */
 
-const firstchar= anyString=> anyString[4];
-console.log(firstchar("SujitKumar"));
+// const firstchar= anyString=> anyString[4];
+// console.log(firstchar("SujitKumar"));
+
+
+
+
+
+
+
+
+
+
+
+
+// const  function = sum(a,b){
+//   console.log(a+b);
+// }
+// sum(5,6);
+
+
+
+function welcome(){
+  console.log("hello world");
+}
+welcome();
+
+
+
+
+
+
+
+
+
+
+
+a = ()=>{
+  console.log("hello bhai");
+}
+
+a();
+
