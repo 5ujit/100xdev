@@ -1,3 +1,4 @@
+/*
 // // Function to start the countdown
 // function startTimer(duration, display){
 //   var timer = duration;
@@ -82,9 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-
-
+*/
 
 
 
