@@ -1,0 +1,11 @@
+function stringOperations(str) {
+  let length = str.length;
+  console.log("Length of the string:", length);
+  
+  // Demonstrating lastIndexOf() and indexOf() methods
+  console.log("Last index of 'a':", str.lastIndexOf('a'));
+  console.log("Index of 'b':", str.indexOf('b'));
+}
+
+// Example usage:
+stringOperations("example string");
