@@ -96,6 +96,8 @@ const findIndexof=(abc,point )=>{
 findIndexof("apple mango pineapple", "mango");
 
 */
+
+
 console.log("👉👉👉👉👉👉👉👉 what if you what to target the last word 👈👈👈👈 "); 
 const findIndexof=(abc,point )=>{
   console.log("this is the string i have written: ",abc );
@@ -111,3 +113,7 @@ findIndexof("apple mango  mango mango pineapple", "mango");
 //  in length u use str.length
 //  lastIndexOf()
 //  indexOf()
+
+
+let a= "abcd"
+console.log(a.length);
