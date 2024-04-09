@@ -21,8 +21,8 @@
 
 
 const value = "abcdefghij";
-let ans = value.substr(0,5);//
-let ans2 = value.slice(0,6);
+let ans = value.substr(2,5);//
+let ans2 = value.slice(2,5);
 console.log("this is substr :", ans);
 console.log("this is slice ok :",ans2);
 
