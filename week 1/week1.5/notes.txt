@@ -1,0 +1,18 @@
+/*
+these are the keywords use for async code
+fetch
+axios
+promises
+settimeout
+setinterval
+
+*/
+
+these are the uses to gets the answers of the abouve code 
+
+then catch 
+callbacks
+async wait 
+
+
+//
