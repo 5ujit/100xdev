@@ -1,0 +1,3 @@
+// create a simple http server in c from scratch
+// create a todo application where u store data in a file 
+// create a rust /golang/ java http server
