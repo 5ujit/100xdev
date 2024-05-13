@@ -1,4 +1,15 @@
-co
+const express = require("express");
+
+const app = express();
+
+const port = 3000
+
+app.get('/',function(req,res){
+  res.send("hello ji  !!!!");
+})
+app.listen
+
+
 //create a todo that todo list users store todos on the server
 
 /*
