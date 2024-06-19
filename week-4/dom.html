@@ -1,0 +1,28 @@
+<html>
+    <script>
+        function debounceSumof(){
+
+            
+        }
+        const greetMe=()=>{
+            const a= document.getElementById("firstnumber").value;
+            const b= document.getElementById("secondnumber").value;
+            fetch("https://sum-server.100xdevs.com/sum?a="+ a  +"&b="+b)
+                .then(function(response){
+                    response.text()
+                    .then(function(ans){
+                        document.getElementById("dosum").innerHTML = ans;
+                    })
+                })
+
+        }
+       
+
+    </script>
+    <body>  
+       First num : <input type="text" id="firstnumber" placeholder="First number" id=""> <br> <br>
+        Second num :<input  type="text" id="secondnumber" placeholder="Second number"  id=""> <br> <br>
+        <button onclick="greetMe()">click me to add it </button><br><br>
+    </body>
+    <h1 id="dosum"></h1>
+</html>
