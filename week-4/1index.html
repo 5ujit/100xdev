@@ -1,5 +1,9 @@
 <html>
     <script>
+        function debouncepopulateDiv(){
+
+        }
+        
         function populateDiv(){
             const a = document.getElementById("firstNumber").value;
             const b = document.getElementById("secondNumber").value;
@@ -17,8 +21,8 @@
         }
     </script>
 <body>
-    <input type="text"id=firstNumber placeholder="First number"><br><br>
-    <input type="text" id="secondNumber" placeholder=" Sccond number"><br><br>
+    <input type="text"id=firstNumber placeholder="First number" oninput="debouncepopulateDiv()"><br><br>
+    <input type="text" id="secondNumber" placeholder=" Sccond number" oninput="debouncepopulateDiv()"><br><br>
     <button onclick="populateDiv()"> calculate sum </button>
     <h1 id="finalSum"></h1>
 </body>
