@@ -1,11 +1,13 @@
 const express= require("express");
 const { createTodo, updateTodo } = require("./types");
-
+const { Todo } = require("./db");
+const cors= require("cors");
 const app=express();
 
-
 app.use(express.json())
-app.post('/todo',(req,res)=>{
+app.use(cors());
+
+app.post('/todo',async (req,res)=>{
     const createPayload=req.body;
     const parsedPayload =createTodo.safeParse(createPayload);
     if(!parsedPayload.success){
@@ -16,21 +18,44 @@ app.post('/todo',(req,res)=>{
         return;
       
     }  // put it in mongodb
+    await Todo.create({
+        title: createPayload.title,
+        description: createPayload.description, 
+        
+        })
+
+        res.json({
+            msg:"toto creatd successfuly"
+        })
+
     })
 
-app.get("/todos",()=>{
+app.get("/todos",async(req, res)=>{
 
+    const todos= await Todo.find({});
+    
+    res.json({
+        todos
+    });
 })
 
-app.put("/completed",()=>{
-    const pudatePayload= req.body;
+app.put("/completed",async(req, res)=>{
+    const updatePayload= req.body;
     const parsedPayload= updateTodo.safeParse(updatePayload);
-    req.status(411).json({
-        msg: "you sent the worng inputs"
+    if(!parsedPayload.success){
+        res.status(411).json({
+            msg: "you sent the wrong inputs",
+        })
+        return;
+    }
+    await todo.update({
+        _id: req.body.id
+    },{
+        compleated: true
     })
-    return;
-
-
+    res.json({
+        msg:"Tod marked as completed"
+    })
 })
 
 

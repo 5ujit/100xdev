@@ -1,15 +1,15 @@
-const mongose = require("mongoose");
+const mongoose = require("mongoose");
 
-mongose.connect("mongodb+srv://admin21:qwerty123456@sujit399.5yw3sem.mongodb.net/todosApp")
+mongoose.connect("mongodb+srv://admin21:qwerty123456@sujit399.5yw3sem.mongodb.net/todosApp")
 
 const todoSchema=mongoose.Schema({
     title:String,
-    descriptin: String,
+    description: String,
     completed: Boolean
 })
-const todo= mongoose.mondel('todo',todoSchema);
+const Todo= mongoose.model('Todo',todoSchema)
 
  
 module.exports={
-    todo
+    Todo
 }

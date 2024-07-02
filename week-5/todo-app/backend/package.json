@@ -10,9 +10,11 @@
   "author": "sujit",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "epress": "^0.0.1-security",
     "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
