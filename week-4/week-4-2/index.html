@@ -2,27 +2,29 @@
     <script>
         function addTodo(){
             const title = document.getElementById("title").value;
-            const description= document.getElementById("description").value;
-            // document.getElementById("container").innerHTML="asdadas";
-          const orginalHtml= document.getElementById("container").innerHTML;
+            const description = document.getElementById("description").value;
+            const originalHtml= document.getElementById("container").innerHTML;
+            // document.createElement
+            const outerDiv= document.createElement("div")// div
+            outerDiv.innerHTML= title;
+            document.getElementById("container").appendChild(outerDiv);
 
-
-          document
+         
         }
     </script>
 
-
     <div>
-        <input  type="text" id="title" placeholder="title"><br>
-        <br>
-        <input  type="text" id="description" placeholder="description">
-        <br><br>
+        <input id="title" type="text" placeholder="title"><br> <br>
+        <input id="description" type="text" placeholder="description" ><br> <br>
+        <button onclick="addTodo()">Add todo</button>
 
-        <button  onclick="addTodo()">Add toto</button>
-        
-        
-        
-        <h1>hello devloper sujit srivastav</h1>
-        <div id="container"></div>
+        <div id="container">
+           
+        </div>
+    
+
     </div>
+
+ 
+
 </html>
