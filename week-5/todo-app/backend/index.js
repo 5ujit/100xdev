@@ -32,10 +32,10 @@ app.post('/todo',async (req,res)=>{
 
 app.get("/todos",async(req, res)=>{
 
-    const todos= await Todo.find({});
+    // const todos= await Todo.find({});
     
     res.json({
-        todos
+        todos: []
     });
 })
 
