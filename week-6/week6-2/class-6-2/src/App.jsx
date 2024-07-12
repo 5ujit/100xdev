@@ -1,61 +1,34 @@
-import { useEffect } from "react";
-import { useMemo } from "react";
-import { useState } from "react"
+import React, { memo, useState } from "react";
 
-function App(){
+function App() {
+  const [count, setCount] = useState(0);
 
-const [inputValue,setInputValue]=useState(0)
-const [counter,setCouner]=useState(1)
-
-  let count =useMemo(()=>{
-    let finalCount=0;
-    for(let i=0; i<=Number(inputValue); i++){
-      finalCount = finalCount  +i;
-    }
-    return finalCount; 
-
-  },[inputValue])
-  
- 
-
-
+  function logSomething() {
+    console.log("child clicked");
+  }
 
   return (
     <div>
-      <input
-        type="number"
-        placeholder="type a number"
-      onChange={function(e){
-        // console.log(e.target.value);
-      setInputValue(e.target.value)
-      }}
-      /> <br />
-      sum of {inputValue} is {count}
-
-      <br />
-      <button onClick={()=>{
-        setCouner(counter +1)
-      }}> counter {counter} </button>    
+      <ButtonCounter inputFunction={logSomething} />
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        click me {count}
+      </button>
     </div>
-
   );
 }
-export default App
 
+const ButtonCounter = memo(({ inputFunction }) => {
+  console.log("child render");
 
+  return (
+    <div>
+      <button onClick={inputFunction}>button clicked</button>
+    </div>
+  );
+});
 
-
-
-/*
-
-cost [count,setCouner]=useEffect(0)
-
-useEffect(()=>{
-  let finalCount =0;
-   for(let i=0; i<=Number(inputValue); i++){
-      finalCount = finalCount  +i;
-      }
-      setCount(finalCount);
-
-      },[inputValue])
-*/
+export default App;
