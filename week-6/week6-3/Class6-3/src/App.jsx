@@ -1,29 +1,22 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useRef } from "react";
 
-function APP(){
-  const [exchangeData,setExchangeData]=useState({})
-  const [bankData, setBankData]=useState({})
-  
 
-  fetch("https://google.com",async(res)=>{
-    const json =await res.jaon();
-    setBankData({income:100});
-  });
+/*What is useRef ? -dom
+how it use it */
 
-  setTimeout(()=>{
-    setExchangeData({
-      return :100
-    });
-  },1000);
-
-  const  incomeTax=(bankData.income+ exchangeData) * 0.3;
-
-  return(
-    <div>
-      hi there ,your income tax return are {incomeTax}
-    </div>
+function App(){
+  const [name , setName]=useState("hello ji")
+  const refElement=useRef("");
+  console.log(refElement);
+  function Reset
+  return (
+    <>
+    <h1> learning useRef</h1>
+    <input type="text" value={name} onChange={(e)=>setName(e.target.value)} />
+    <button onClick={Reset}> Reset</button>
+    </>
   )
-
 }
 
-export default App
+export default App 
