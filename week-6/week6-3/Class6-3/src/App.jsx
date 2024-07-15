@@ -1,3 +1,33 @@
+import React, { useState, useMemo } from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [anotherState, setAnotherState] = useState(0);
+
+  // Expensive computation function
+  const expensiveComputation = (num) => {
+    console.log('Computing...');
+    for (let i = 0; i < 1000000000; i++) {} // Simulate a heavy computation
+    return num * 2;
+  };
+
+  // Memoized result
+  const memoizedValue = useMemo(() => expensiveComputation(count), [count]);
+
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment Counter</button>
+
+      <h1>Another State: {anotherState}</h1>
+      <button onClick={() => setAnotherState(anotherState + 1)}>Increment Another State</button>
+
+      <h2>Expensive Computation Result: {memoizedValue}</h2>
+    </div>
+  );
+}
+
+export default App;
 
 
 
