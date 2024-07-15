@@ -1,22 +1,99 @@
-import React, { useState } from "react";
-import { useRef } from "react";
+import { useEffect, useState } from 'react'
+
+function App() {
+  const [exchangeData, setExchangeData] = useState({});
+  const [bankData, setBankData] = useState({});
+  console.log("hi there re-render");
+
+  useEffect(function(){
+    setTimeout(()=>{
+      setBankData({income:100});
+    },3000)
+  },[])
+
+  useEffect(()=>{
+    setTimeout(() => {
+      setExchangeData({
+        returns: 100
+      });
+    }, 1000);
+
+  },[])
 
 
-/*What is useRef ? -dom
-how it use it */
 
-function App(){
-  const [name , setName]=useState("hello ji")
-  const refElement=useRef("");
-  console.log(refElement);
-  function Reset
+
+  const incomeTax = (bankData.income + exchangeData.returns) * 0.3;
+
   return (
-    <>
-    <h1> learning useRef</h1>
-    <input type="text" value={name} onChange={(e)=>setName(e.target.value)} />
-    <button onClick={Reset}> Reset</button>
-    </>
+    <div>
+        hi there, your income tax returns are {incomeTax}
+    </div>
   )
 }
 
-export default App 
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+import { useState } from 'react'
+
+function App() {
+  const [exchangeData, setExchangeData] = useState({});
+  const [bankData, setBankData] = useState({});
+  console.log("hi there re-render");
+
+  setTimeout(()=>{
+    setBankData({income:100})
+  },3000);
+
+  setTimeout(() => {
+    setExchangeData({
+      returns: 100
+    });
+  }, 1000);
+
+  const incomeTax = (bankData.income + exchangeData.returns) * 0.3;
+
+  return (
+    <div>
+        hi there, your income tax returns are {incomeTax}
+    </div>
+  )
+}
+
+export default App
+
+ */
