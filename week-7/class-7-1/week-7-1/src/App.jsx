@@ -16,7 +16,6 @@ function App() {
         <button onClick={() => {
           navigate("/dashboard");
         }}>Dashboard</button>
-
       </div>
    
         <Routes>
