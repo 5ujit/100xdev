@@ -6,7 +6,8 @@ import { Landing } from './components/Landing'
 function App() {
   const navigate = useNavigate();
   return (
-    <div>
+    <BrowserRouter>
+    
       <div>
         <button onClick={() => {
           navigate("/");
@@ -17,14 +18,16 @@ function App() {
         }}>Dashboard</button>
 
       </div>
-      <BrowserRouter>
+   
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/" element={<Landing />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    
   )
 }
 
 export default App
+
+
