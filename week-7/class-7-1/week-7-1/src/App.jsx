@@ -1,110 +1,47 @@
-//App.jsx file
-import { BrowserRouter, Route, Routes , useNavigate} from 'react-router-dom';
-import { Suspense, lazy } from 'react';
-import './App.css'
-const Dashboard= lazy(()=>import("./components/Dashboard"))
-const Landing= lazy(()=>import("./components/Landing"))
-
-// const Dashboard = lazy(()=>import ("./components/Dashboard") )
-function App() {
+import { useContext, useState } from "react";
+import { CountContext } from "./context";
+function App(){
+  const [count,setCount]=useState(0);
+// wroap anyone that wants to use the teleported value inside a provider
   return (
-    <div>
-      <BrowserRouter>
-      <Appbar />
-        <Routes>
-          <Route path='/dashboard'element={
-            <Suspense fallback={'loading...'}>
-              < Dashboard /></ Suspense>}/>
-
-
-
-
-          <Route path='/'element={<Suspense fallback={'loading...'}>< Landing /></ Suspense>}/>
-          
-          
-        </Routes>
-      </BrowserRouter>
-    </div>
-
-      
-  );
+ <div>
+  <CountContext.Provider value={{count, setCount}} >
+    <Count  setCount={setCount} />
+    </CountContext.Provider>
+  </div>
+  )
 }
-function Appbar(){
-  const navigate= useNavigate();
+
+  function Count({count,setCount}) {
+    return <div>
+      < CountRenderer count={count} />
+      <Buttons count={count} setCount={setCount} />
+    
+    </div>
+  }
+
+function CountRenderer(){
+  const count= useContext(CountContext);
   return <div>
-  <button onClick={() => {
-    navigate("/");
-  }}>Landing page</button>
+    {count}
+  </div>
+}
 
-  <button onClick={() => {8
-    navigate("/dashboard");
-  }}>Dashboard</button>
+  function  Buttons(){
+    const {count,setCount}= useContext(CountContext);
+  return <div> 
+      
+     <button onClick={()=>{
+      setCount(count +1);
+     }}>Increase</button>
 
-</div>
-          
-};
+     <button onClick={()=>{
+            setCount(count -1);
+     }}>Decrease</button>
+  </div>
+
+}
+
 export default App
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * use navigatation
- * 
- 
- * 
- * //App.jsx file
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
-import './App.css'
-import { Suspense,lazy } from 'react'
-const Dashboard = lazy(()=>import ("./components/Dashboard") )
-const Landing = lazy(()=>import ("./components/Landing" ) )
-
-function App() {
-  return (
-    <div>
-      <BrowserRouter>
-      <Appbar />
-        <Routes>
-          <Route path='/dashboard'element={<Suspense fallback={'loading...'}>< Dashboard /></ Suspense>}/>
-          <Route path='/'element={<Suspense fallback={'loading...'}>< Landing /></ Suspense>}/>
-          
-          
-        </Routes>
-      </BrowserRouter>
-    </div>
-
-      
-  );
-}
-function Appbar(){
-  const navigate= useNavigate();
-  return <div>
-  <button onClick={() => {
-    navigate("/");
-  }}>Landing page</button>
-
-  <button onClick={() => {8
-    navigate("/dashboard");
-  }}>Dashboard</button>
-
-</div>
-          
-};
-export default App
-
-
-
-
- */
