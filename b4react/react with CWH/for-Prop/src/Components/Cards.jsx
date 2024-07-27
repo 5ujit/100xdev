@@ -7,7 +7,7 @@ const Cards = (props) => {
     <img 
       src={imageSrc} 
       alt="Card Image" 
-      style={{ border: "2px solid green", paddingRight: "2px", width:"418px" }} 
+      style={{ border: "2px solid green", paddingRight: "2px", width:"315px" }} 
     />
         <h1>{props.title}</h1>
         <h3>{props.desciption}</h3>
