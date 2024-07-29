@@ -1,0 +1,19 @@
+nav{
+    justify-content: flex-end;
+    background-color: beige;
+    padding: 23px;
+    
+}
+nav,ul{
+    display: flex;
+  
+ }
+
+ li{
+    list-style: none;
+ }
+
+ ul{
+    gap:30px;  
+    align-items:right; 
+ }
