@@ -10,7 +10,9 @@ function App() {
   },[count])
   return (
    <>
-    <button> here count {count} </button>
+    <button onClick={()=>{
+      setCount(count +1)
+    }}> here count {count} </button>
    </>
   )
 }
