@@ -3,7 +3,7 @@ import React from 'react'
 const Landing = () => {
   return (
     <div>
-        Landing page 
+         this is landing page
       
     </div>
   )
