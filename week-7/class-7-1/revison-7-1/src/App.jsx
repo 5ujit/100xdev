@@ -12,17 +12,14 @@ function App() {
   return (
 
     <div>
-      
-
-
-    <BrowserRouter>
-    <Appbar /> 
+  <BrowserRouter>
+        <Appbar /> 
       <Routes>
         <Route path="/dashbord" element={<Suspense fallback={"loading..."} > <Dashboard /></Suspense>} />
         <Route path="/" element={<Suspense fallback={"loading..."}> <Landing /></Suspense>} />
         
       </Routes>
-    </BrowserRouter>
+  </BrowserRouter>
   </div>
      )
 }
