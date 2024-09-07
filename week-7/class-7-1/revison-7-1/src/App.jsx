@@ -1,49 +1,24 @@
-import{lazy, Suspense }from "react";
-import {BrowserRouter,Routes,Route, useNavigate }from 'react-router-dom'
-import './App.css'
+// prop drilling ok 
+import React, { useState } from 'react'
 
-const  Dashboard=  lazy(()=>import('./Components/Dashboard'))
-const  Landing = lazy(()=>import('./Components/Landing'))
-
-function App() {
+const App = () => {
+  const [count,setCount]=useState(0);
   
-
-
   return (
-
     <div>
-  <BrowserRouter>
-        <Appbar /> 
-      <Routes>
-        <Route path="/dashbord" element={<Suspense fallback={"loading..."} > <Dashboard /></Suspense>} />
-        <Route path="/" element={<Suspense fallback={"loading..."}> <Landing /></Suspense>} />
-        
-      </Routes>
-  </BrowserRouter>
-  </div>
-     )
+      <Count />
+      <Buttons />
+      
+    </div>
+  )
+}
+function Count(){
+
 }
 
-function Appbar(){
-  const navigate = useNavigate();
-  return(
-    <div>
-       <div>
-      
-      <button onClick={()=>{
-        navigate("/");
-      }} >Landing Page </button>
-    
-      <button onClick={()=>{
-        navigate("/dashbord");
-      }} >Dashnoard </button>
-    
-    </div>
-    </div>
-   
+function Buttons(){
 
-
-  )
 }
 
 export default App
+
