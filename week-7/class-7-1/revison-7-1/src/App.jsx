@@ -6,17 +6,30 @@ const App = () => {
   
   return (
     <div>
-      <Count />
-      <Buttons />
+      <Count count={count} />
+      <Buttons  count={count} setCount={setCount}/>
       
     </div>
   )
 }
-function Count(){
-
+function Count({count}){
+  return <div>
+    {count}
+  </div>
 }
 
-function Buttons(){
+
+function Buttons({count,setCount}){
+  return <div>
+    <button onClick={()=>{
+      setCount(count+1)
+    }}>Increas</button>
+    
+    <button onClick={()=>{
+      setCount(count-1)
+    }}>Decrease</button>
+    
+  </div>
 
 }
 
