@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { CountContext } from './context';
 
-
+// this this useContext,
 
 const App = () => {
   const [count,setCount]=useState(0);
