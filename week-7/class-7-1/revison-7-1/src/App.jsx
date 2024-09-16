@@ -5,7 +5,7 @@ import { CountContext } from './context';
 
 const App = () => {
   const [count,setCount]=useState(0);
-  // z
+
   
   return (
     <div>
