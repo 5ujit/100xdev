@@ -13,7 +13,8 @@ const App = () => {
       <Count setCount={setCount} />
       </CountContext.Provider>
     </div>
-  )
+  
+)
 }
 
 function Count({setCount}){
