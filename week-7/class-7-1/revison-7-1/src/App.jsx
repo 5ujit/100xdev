@@ -10,7 +10,9 @@ const App = () => {
   return (
     <div>
       <CountContext.Provider value={count}>
+
       <Count setCount={setCount} />
+     
       </CountContext.Provider>
     </div>
   
@@ -19,7 +21,10 @@ const App = () => {
 
 function Count({setCount}){
   return <div>
+
+    
     <CountRenderer />
+  
    < Buttons setCount={setCount} />
   </div>
 }
