@@ -5,7 +5,7 @@ import Child from './Child';
 const Parent = ({ message }) => {
   return (
     <div>
-      <h2>Parent Component</h2>
+      <h2>Parent Component </h2>
       <Child message={message} />
     </div>
   );
