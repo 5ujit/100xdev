@@ -1,45 +1,14 @@
-import React,{ useState } from"react";
+import React from 'react'
+import Greeting from './components/Greeting';
 
-function App(){
-  // const [name,setName]=useState("jhon");
-  return(
+const App = () => {
+  const name = "shlok";
+  return (
     <div>
-      <h1>Prop drilling Example </h1>
-     
+      <h1>welocome to the app!</h1>
+      <Greeting userName={name}/>
     </div>
-  );
+  )
 }
 
-
-
-export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-// function ChildA({name,setName}){
-//   return(
-//     <div>
-//       <h2>ChildA component </h2>
-      
-//     </div>
-//   )
-// }*/
+export default App
