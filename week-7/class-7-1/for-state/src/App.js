@@ -1,30 +1,25 @@
+import React, { useRef, useState } from "react";
+// what is useRef? -dom manipulate
+// How to use it?
 
-import React, { useEffect, useState } from "react";
+const App=()=>{
 
-function App(){
+  const refElement= useRef("");
+  const [name ,setName]=useState("Rocky");
+  console.log(refElement);
 
-  const [count, setcounter]=useState(2); 
-  const [data,setDtat]=useState("Ram");
-  useEffect(()=>{
-    console.log("conponent mounted");
-    
+  function Reset(){
+    setName("");
+    refElement.current.focus()
+  }
 
-
-  },[data])
-
-
-  return(
-    <>
-     
-     <h1>Button clicked {count} times</h1>
-     <button onClick={()=> setcounter(count+1)} >click</button>
-
-     <button onClick={()=>setDtat("Sita")} >Update data</button>
-
-
-
-     
   
+  return (
+    <>
+      <h1>Learing useRef</h1>
+      <input ref={refElement} type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
+
+      <button onClick={Reset} >Reset</button>
     </>
   )
 }
