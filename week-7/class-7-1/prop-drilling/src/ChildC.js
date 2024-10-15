@@ -1,11 +1,11 @@
 // ChildC.js
 import React from "react";
 
-function ChildC({ name }) {  // Destructure 'name'
+function ChildC({ name }) {  
     return (
         <>
             <h1>
-                Component C displaying {name}  {/* Display the name */}
+                Component C displaying {name}  
             </h1>
         </>
     );
