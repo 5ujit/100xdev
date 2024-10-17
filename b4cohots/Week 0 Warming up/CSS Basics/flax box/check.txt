@@ -1,7 +1,0 @@
-<div style="display: flex; justify-content: space-between;">
-  <img src="logo.svg" width="170">
-  <div>
-    Sign up
-  </div>
-
-</div>

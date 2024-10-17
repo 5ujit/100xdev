@@ -1,8 +1,0 @@
-
-you have to use an api and display the data in the form of a card under a container all the data points returned by the API should be converted to a card
-
-use api : https://jsonplaceholder.typicode.com/posts
-
-hint:
-create a state for the data will be fetched useing the Json placeholder API
-Inside useEffect , use fetch to populate that state and then use map to render the cards form that state
