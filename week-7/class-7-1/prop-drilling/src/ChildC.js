@@ -11,4 +11,5 @@ function ChildC({ name }) {
     );
 }
 
+
 export default ChildC;
