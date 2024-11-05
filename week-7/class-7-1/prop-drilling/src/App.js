@@ -1,18 +1,46 @@
-// App.js
+import { createContext, useContext } from "react";
 
-import React from 'react'
-// import ChildA from './ChildA'
-import ChildC from './ChildC';
+const NameContext= createContext();
+const App=()=>{
+    const name ="Rocky";
 
-const App = () => {
-  const name= "Roky bahi";
-  return (
-    <div>
-      {/* <ChildA name={name} /> */}
-      <ChildC name={name} />
-     
-    </div>
-  )
+
+    return (
+        <NameContext.Provider value={name}>
+            <div>
+            <ChildA/>
+            </div>
+        </NameContext.Provider>
+    )
 }
 
-export default App
+const ChildA=()=>{
+    return (
+        <>
+      
+      <h3> {useContext (NameContext) } is my good friend</h3> 
+        <ChildB/>
+
+        </>
+    )
+}
+
+const ChildB=()=>{
+    return (
+        <ChildC/>
+    )
+}
+
+
+
+
+const ChildC=()=>{
+    const name =useContext(NameContext);
+    return(
+        <>
+        <h1> Component C is displaying {name} </h1>
+        </>
+    )
+}
+
+export default App;

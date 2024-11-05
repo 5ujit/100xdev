@@ -1,0 +1,14 @@
+// App.js
+import React from 'react';
+import ChildA from './ChildA';
+
+const App = () => {
+  const name = "Roky"; // Define the name
+  return (
+    <div>
+      <ChildA name={name} />  {/* Pass 'name' to ChildA */}
+    </div>
+  );
+}
+
+export default App;

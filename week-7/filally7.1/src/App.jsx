@@ -1,3 +1,26 @@
+import { createContext, useContext } from "react";
+// create Themecontext
+const ThemeContext = createContext();
+
+const useTheme=()=>useContext(ThemeContext);
+// custom hook to use ThemeContext
+export const useTheme=()=useContext(ThemeContext);
+//ThemeProvider component
+
+export const ThemeProvider= ({children})=>{
+  const [theme,setTheme]=
+} 
+
+
+
+
+
+
+
+
+
+
+/*
 import React from 'react'
 import { useState } from 'react'
 
@@ -27,11 +50,13 @@ function Header ({theme,toggleTheme}){
 function ThemeThoggler({theme,toggleTheme}){
   return (
     <button onClick={toggleTheme}>
-      switch to  {theme==- 'light22'? 'dark': 'light'} mode 
-    </button>
+  Switch to {theme === 'light' ? 'dark' : 'light'} mode
+</button>
+
   )
 
 }
 
 
 export default App
+*/

@@ -1,13 +1,37 @@
-import React, { useState } from 'react'
+import React from 'react';
 
 const App = () => {
-  const [count ,setCount]=useState(0)
+  const name = "Roky"; // Define the name
+  
+  // ChildC component
+  const ChildC = ({ name }) => {
+    return (
+      <h1>Component C displaying {name}</h1>  {/* Display 'name' in ChildC */}
+    );
+  };
+
+  // ChildB component
+  const ChildB = ({ name }) => {
+    return (
+      <ChildC name={name} />  {/* Pass 'name' to ChildC */}
+    );
+  };
+
+  // ChildA component
+  const ChildA = ({ name }) => {
+    return (
+      <>
+        <ChildB name={name} />  {/* Pass 'name' to ChildB */}
+        <h1>{name} is my good friend</h1>  {/* Display 'name' in ChildA */}
+      </>
+    );
+  };
+
   return (
     <div>
-      <p  > this is count {count}  </p>
-      <button onClick={()=>setCount(count+1)} > click me </button>
+      <ChildA name={name} />  {/* Pass 'name' to ChildA */}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
