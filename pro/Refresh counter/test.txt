@@ -1,0 +1,59 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const requestIp = require('request-ip');
+
+const app = express();
+
+const mongoUri = 'mongodb+srv://admin21:qwerty123456@sujit399.5yw3sem.mongodb.net/web-counter?retryWrites=true&w=majority';
+
+mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Define a schema and model for the counter
+const counterSchema = new mongoose.Schema({
+    count: Number,
+    ips: [String]
+});
+
+const Counter = mongoose.model('Counter', counterSchema);
+
+// Middleware to get the client's IP address
+app.use(requestIp.mw());
+
+// Route to handle the main page
+app.get('/', async (req, res) => {
+    let counter = await Counter.findOne();
+
+    if (!counter) {
+        counter = new Counter({ count: 0, ips: [] });
+        await counter.save();
+    }
+
+    counter.count++;
+    const clientIp = req.clientIp;
+    if (!counter.ips.includes(clientIp)) {
+        counter.ips.push(clientIp);
+    }
+    await counter.save();
+
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Welcome Page</title>
+        </head>
+        <body>
+            <h1>Welcome to the Page!</h1>
+            <p>This page has been refreshed ${counter.count} times.</p>
+            <p>Your IP address is: ${clientIp}</p>
+            <p>IP addresses stored in the database: ${counter.ips.join(', ')}</p>
+        </body>
+        </html>
+    `);
+});
+
+// Start the server
+app.listen(5000, () => {
+    console.log('Server is running on http://localhost:3000');
+});
