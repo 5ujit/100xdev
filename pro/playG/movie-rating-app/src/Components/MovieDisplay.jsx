@@ -1,4 +1,4 @@
-//Components/ MovieDisplay.jsx
+// Components/MovieDisplay.jsx
 import React from "react";
 
 const MovieDisplay = ({ movie }) => {
