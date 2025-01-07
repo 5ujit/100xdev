@@ -1,4 +1,0 @@
-let move head next web project  
-hey sunn muje na mere ko ek webpage bana hai jss mai whatever i serch movie name at search box it show its rating ( but it frech data form imbd movie rating ) i want whan i give name then it gives me movie name and its rating form imbd movie site  '
-like i want one search box where i am gonna type what ever move name then it give that's rating with 
-(one more thing this code dont give me handling part for now 
