@@ -10,6 +10,7 @@ class FirstFunction{
             num1= in.nextInt();
             System.out.println("Enter num 2 ");
             num2 = in.nextInt();
+            
 
     }
 }
