@@ -1,3 +1,4 @@
+package condition;
 import java.util.Scanner;
 class FirstFunction{
     public static void main(String[] arg){
@@ -10,7 +11,10 @@ class FirstFunction{
             num1= in.nextInt();
             System.out.println("Enter num 2 ");
             num2 = in.nextInt();
+            sum = num1+num2;
+            System.out.println(sum);
             
+
 
     }
 }
