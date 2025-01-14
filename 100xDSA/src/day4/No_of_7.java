@@ -5,10 +5,14 @@ public class No_of_7 {
         System.out.println("****");
         int n= 1323232354;
         int count =0;
-        int rem;
+//        int rem;
         while(n>0){
-            rem=n%10;
-            if()
+          int  rem=n%10;
+            if(rem==2){
+                count++;
+            }
+            n=n/10;
         }
+        System.out.println(count);
     }
 }
