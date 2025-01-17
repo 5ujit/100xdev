@@ -13,6 +13,7 @@ public class First {
         } else if (fruit.equals("apple")) {
             System.out.println("a sweet of ");
 
+
         }
 
 
