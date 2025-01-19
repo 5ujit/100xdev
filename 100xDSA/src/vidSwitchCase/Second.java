@@ -16,6 +16,11 @@ public class Second {
        case "Orange":
            System.out.println("Round fruits");
            break;
+       case "Grapes":
+           System.out.println("small fruits");
+           break;
+       default:
+           System.out.println("please enter a valid fruits");
 
            
 
