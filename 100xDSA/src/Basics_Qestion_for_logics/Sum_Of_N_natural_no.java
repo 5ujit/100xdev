@@ -7,9 +7,13 @@ public class Sum_Of_N_natural_no {
         System.out.println("this is n ");
         Scanner sc = new Scanner(System.in);
 
-        int n;
+        int n,sum= 0 ;
         n=sc.nextInt();
-        for ()
+        for (int i =0; i<=n; i++){
+            sum = sum +i;
+
+        }
+        System.out.println(sum);
 
     }
 }
