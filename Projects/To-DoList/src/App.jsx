@@ -1,10 +1,10 @@
 import React from 'react'
-import ToDo from './Components/ToDo'
+import Todo from './Components/Todo.jsx'
 
 const App = () => {
   return (
-    <div>
-      <ToDo/>
+    <div className=' '>
+      <Todo/>
     </div>
   )
 }

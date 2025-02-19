@@ -9,7 +9,7 @@ public class Power_ {
         System.out.println("Enter No n.");
         Scanner sc = new Scanner(System.in);
         n=sc.nextInt();
-        System.out.println("Enter poser p ");
+        System.out.println("Enter power p ");
         p=sc.nextInt();
         for (int i=1; i<=p; i++){
             result =n*result;
