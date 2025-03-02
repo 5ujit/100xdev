@@ -25,7 +25,9 @@ class MyComponent extends React.Component{
   }
   componentWillUnMount(){
     console.log("Unmounted");
+   console.log("lo");
     
+
   }
   render(){
     return<div> hi there </div>
@@ -35,6 +37,8 @@ class MyComponent extends React.Component{
 
 export default App
 
+
+console.log("unmounted");
 
 /*
 function MyComponent() {
