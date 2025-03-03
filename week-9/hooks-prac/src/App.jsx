@@ -1,6 +1,73 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
 
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+// import "./App.css";
+
+function App() {
+  const [todos, setTodos] = useState([])
+
+  useEffect(() => {
+    // axios.get("https://sum-server.100xdevs.com/todos")
+    axios.get("https://dummyjson.com/todos")
+      .then(res => {
+        setTodos(res.data.todos);
+      })
+  }, [])
+
+  return (
+    <>
+     {todos.map(todo => <Track key={todo.id} todo={todo} />)}
+
+    </>
+  )
+}
+
+function Track({ todo }) {
+  return <div>
+    {todo.title}
+    <br />
+    {todo.description}
+  </div>
+}
+
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const App = () => {
   const [render ,setRender]=useState(true);
   useEffect(()=>{
@@ -39,7 +106,7 @@ export default App
 
 
 console.log("unmounted");
-
+*/
 /*
 function MyComponent() {
   useEffect(() => {
