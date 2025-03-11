@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Scheduler</title>
+</head>
+<body>
+    <h2>Meeting Scheduler</h2>
+    <label for="date">Select Date & Time:</label>
+    <input type="datetime-local" id="date">
+    <button onclick="scheduleMeeting()">Schedule Meeting</button>
+    
+    <h3 id="output"></h3>
+
+    <script>
+        function scheduleMeeting() {
+            let inputDate = document.getElementById("date").value;
+            let meetingDate = new Date(inputDate);
+            document.getElementById("output").innerText = 
+                "Meeting Scheduled At: " + meetingDate.toLocaleString();
+        }
+    </script>
+</body>
+</html>
