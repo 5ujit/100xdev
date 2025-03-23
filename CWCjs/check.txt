@@ -1,0 +1,23 @@
+see lisiten first we made this then we 
+const mySym = Symbol("key1"); // Create a symbol with description "key1"
+// then 
+
+const JsUser = {
+    name: "sujit",
+    "full name": "Hitesh Choudhary",
+    [mySym]: "This is a symbol value"
+};
+
+// tell me waht is the purpus of making 
+
+
+const mySym = Symbol("key1"); 
+can you explain me each term like each word we use or typed in abouve line 
+ 
+ const i know 
+ mysym for varible name 
+ symbol ( ) - it means like this would be symbol i think so 
+ then why we written key in string can you plss explan me 
+
+
+ 
