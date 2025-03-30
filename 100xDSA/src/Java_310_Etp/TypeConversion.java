@@ -13,9 +13,14 @@ public class TypeConversion {
         System.out.println(d);
         System.out.println(sum);
 
-        char ch='a';
-        int b=(int)ch;
-        System.out.println(b);
+//        char ch='a';
+//        int b=(int)ch;
+//        System.out.println(b);
+
+
+        char ch = 'A';
+        int asciiValue = (int) ch;
+        System.out.println("ASCII of 'A': " + asciiValue);
 
 
     }
