@@ -1,2 +1,5 @@
-const all_new_hero =[...marvel_heros, ...dc_heros]
-// console.log(all_new_hero);
+JsUser.email = "sujit@brave.com"
+// console.log(JsUser.email);
+// Object.freeze(JsUser)
+// JsUser.email = "sujit@microsoft.com"
+// console.log(JsUser);

@@ -2,10 +2,7 @@
 // Object.create
 
 // object literals
-
-const mySym = Symbol(123);
-
-const mySym1 = Symbol(1);
+const mySym=Symbol("key1")
 
 const JsUser = {
   name: "sujit",
@@ -20,28 +17,54 @@ const JsUser = {
 
 // console.log(JsUser.email);
 // console.log(JsUser["email"]);
-
 // console.log(JsUser["full name"]);
-console.log(typeof JsUser[mySym]);
+// console.log([mySym]);
 
-console.log(JsUser[mySym]);
 
-// // console.log(JsUser.email)
-// // console.log(JsUser["email"])
-// // console.log(JsUser["full name"])
-// // console.log(JsUser[mySym])
 
-// JsUser.email = "hitesh@chatgpt.com"
-// // Object.freeze(JsUser)
-// JsUser.email = "hitesh@microsoft.com"
-// // console.log(JsUser);
+JsUser.email="sujit@chatgpt.com"
+// Object.freeze(JsUser)
+JsUser.email="sujit@microsoft.com"
+// console.log(JsUser);
 
-// JsUser.greeting = function(){
-//     console.log("Hello JS user");
-// }
-// JsUser.greetingTwo = function(){
-//     console.log(`Hello JS user, ${this.name}`);
-// }
 
-// console.log(JsUser.greeting());
-// console.log(JsUser.greetingTwo());
+JsUser.greeting= function(){
+  console.log("Hello js user");
+}
+
+JsUser.greeting= function(){
+  console.log("Hello js user");
+}
+
+
+console.log(JsUser.greeting);
+
+
+
+
+    // console.log("___++++++__");
+
+// console.log(JsUser["greeting"]());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
