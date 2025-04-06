@@ -1,2 +1,4 @@
 
-// console.log(b);
+// user.welcomeMessage();
+// user.username ="sam"
+// user.welcomeMessage();
