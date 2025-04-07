@@ -23,4 +23,31 @@ const user ={
 // }
 //  chai()
 
+// const chai= function (){
+//     let username =" hitesth"
+//     console.log(this.username);
+    
+// }
 
+const chai=  ()=>{
+    let username =" hitesth"
+    console.log(this);
+    
+}
+
+// chai()
+
+// const  addTwo=(num1,num2)=>{
+//     return num1+num2;
+// }
+
+// const  addTwo=(num1,num2)=> num1+num2;
+// const  addTwo=(num1,num2)=> (num1+num2);
+// const  addTwo=(num1,num2)=> {username : "hitesh"};// this is wrong 
+const  addTwo=(num1,num2)=> ({username : "hitesh"});
+
+console.log(addTwo(3,6));
+
+
+// const myArray= [2,5,7,8,5]
+// myArray.forEach()
