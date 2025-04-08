@@ -1,0 +1,51 @@
+let name = null;
+let userName = name ?? "Guest";
+console.log(userName); // Output: "Guest"
+
+
+
+
+//
+
+let a;
+a = 5 ?? 10;
+console.log(a)
+
+
+jo muje smaj aaya ki 
+let se vaible define kar diya 
+or usko koi value nahi diya means wo to undefiend hai 
+then acoudint to this topic means that if 
+there value of a = 5 then okey if not then you can take 10 ; 
+now console the value of a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let name = null;
+let userName = name ?? "Guest";
+console.log(userName); // Output: "Guest"
+{
+    let se vaible diclear kiya null ;
+acourding to topic 
+if any name's value null or undefiend
+then 
+userName= name ?? "Guest";
+now we are giving name value to userName if it null and undefiend then take the value which is after ?? 
+
+
+
