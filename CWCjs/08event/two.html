@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: rgb(18, 3, 33); color: #ffff">
+    <h1>chai and code</h1>
+
+    <button id="stop">stop</button>
+  </body>
+
+  <script>
+    // setTimeout(()=>{
+    //     document.getElementById("stop").style.backgroundColor = "red";
+    // },2000)
+
+    const SayHitesh = () => {
+      console.log("Hitesh");
+    };
+
+    const changeText = () => {
+      document.querySelector("h1").
+      innerHTML = "best js series"
+    }
+    
+
+    const changeMe= setTimeout(changeText,2000)
+
+
+    
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(changeMe);
+        console.log("STOPED");
+        
+    })
+
+
+    // setTimeout(changeText, 2000);
+  </script>
+</html>
