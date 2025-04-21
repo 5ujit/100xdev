@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    .slider {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider">
+  <img src="https://images.pexels.com/photos/15868390/pexels-photo-15868390/free-photo-of-bag-of-tulips.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="slide active">
+  <img src="https://images.pexels.com/photos/19416489/pexels-photo-19416489/free-photo-of-composition-with-tulips.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" class="slide">
+  <img src="https://images.pexels.com/photos/8362960/pexels-photo-8362960.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" class="slide">
+
+  <img src="
+  https://images.pexels.com/photos/16038146/pexels-photo-16038146/free-photo-of-bouquet-of-white-tulips.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load "class="slide">
+  <img src="
+  https://images.pexels.com/photos/10622290/pexels-photo-10622290.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"class="slide">
+  <img src="
+  https://images.pexels.com/photos/6990543/pexels-photo-6990543.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"class="slide">
+  <button class="prev" onclick="prevSlide()">Previous</button>
+  <button class="next" onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Show the first slide initially
+  showSlide(currentSlide);
+</script>
+
+</body>
+</html>

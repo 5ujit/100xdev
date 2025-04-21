@@ -8,23 +8,41 @@
   <body style="background-color: rgb(18, 3, 33); color: #ffff">
     <h1>chai and JavaScript</h1>
 
-    <button id="stop">Start</button>
+    <button id="start">Start</button>
     <button id="stop">Stop</button>
   </body>
- <script>
+  <script>
     // const sayDate=function(){
     //     console.log(abc,Date.now());
     // }
 
+    const randomPrint = (str) => {
+      console.log(str, Math.random() * 10);
+    };
 
+    let intervalId; // declare first at top (globally or where needed)
 
-    const randomPrint= (str)=>{
-        console.log( str, Math.random()*10);
- 
-    }
- 
+    const startInterval = () => {
+      intervalId = setInterval(randomPrint, 1000, "hello");
+      console.log("Interval Started");
+    };
+//plag report 
+    const stopInteral = () => {
+      clearInterval(intervalId);
+      console.log("Interval Stoped");
+    };
 
-    setInterval(randomPrint,500000000,"hello")
- </script>
+    document.getElementById("start").addEventListener("click", startInterval);
 
+    document.getElementById("stop").addEventListener("click", stopInteral);
+  </script>
 </html>
+
+
+
+
+
+
+
+
+

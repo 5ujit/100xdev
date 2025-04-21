@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Key Press Event</title>
+<style>
+  body {
+    transition: background-color 0.3s ease;
+  }
+</style>
+</head>
+<body>
+
+<p>Type any character on your keyboard:</p>
+<div id="eventInfo"></div>
+
+<script>
+// Function to display event information
+function displayEventInformation(event) {
+  const eventInfoDiv = document.getElementById('eventInfo');
+  eventInfoDiv.innerHTML = `
+    <p>Event Type: ${event.type}</p>
+    <p>Key Code: ${event.keyCode}</p>
+    <p>Key: ${event.key}</p>
+  `;
+}
+
+// Function to change background color based on key pressed
+function changeBackgroundColor(event) {
+  const key = event.key.toLowerCase(); // Convert to lowercase for case insensitivity
+  
+  // Define rules for different keys to change background color
+  switch(key) {
+    case 'r':
+      document.body.style.backgroundColor = 'red';
+      break;
+    case 'g':
+      document.body.style.backgroundColor = 'green';
+      break;
+    case 'b':
+      document.body.style.backgroundColor = 'blue';
+      break;
+    default:
+      // Reset background color for any other key
+      document.body.style.backgroundColor = '';
+  }
+}
+
+// Add event listener for keypress event
+document.addEventListener('keypress', function(event) {
+  displayEventInformation(event);
+  changeBackgroundColor(event);
+});
+</script>
+
+</body>
+</html>

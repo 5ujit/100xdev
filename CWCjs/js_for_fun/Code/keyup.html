@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Key Up Event</title>
+</head>
+<body>
+
+<p>Press and release any key on your keyboard:</p>
+<div id="eventInfo"></div>
+
+<script>
+// Function to display event information
+function displayEventInformation(event) {
+  const eventInfoDiv = document.getElementById('eventInfo');
+  eventInfoDiv.innerHTML = `
+    <p>Event Type: ${event.type}</p>
+    <p>Key Code: ${event.keyCode}</p>
+    <p>Key: ${event.key}</p>
+  `;
+}
+
+// Add event listener for keyup event
+document.addEventListener('keyup', function(event) {
+  displayEventInformation(event);
+});
+</script>
+
+</body>
+</html>

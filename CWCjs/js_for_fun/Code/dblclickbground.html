@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Double Click Event Example</title>
+<style>
+    body {
+        transition: background-color 0.5s; /* Add a simple transition effect */
+    }
+</style>
+</head>
+<body>
+
+<button id="myButton">Double Click Me!</button>
+
+<script>
+// Get a reference to the button element
+const button = document.getElementById('myButton');
+
+// Define a function to handle the double click event
+function handleDoubleClick() {
+    // Change the background color of the body to a different color
+    document.body.style.backgroundColor = "pink";} //document.body: This is a reference to the <body> element of the HTML document. 
+
+// Attach an event listener for the double click event
+button.addEventListener('dblclick', handleDoubleClick);
+</script>
+
+</body>
+</html>

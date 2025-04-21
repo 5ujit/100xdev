@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container{
+            width:800px;
+            border:1px solid black;
+            position: relative;
+            overflow:hidden;
+        }
+        .slider{
+            display:flex;
+            transition:transform 0.5s ease-in-out;
+
+
+        }
+        .slide{background-position: center;
+           flex: 0 0 100% ;
+           height:400px;
+           background-size:cover;
+
+        }
+        .slider-control{
+            position: absolute;
+            bottom:50%;
+            left:50px;
+            transform:transLatex(-50%);
+            display:flex;
+            justify-content: space-between;
+        }
+        .prev,.next{
+            margin: 0 10px;
+        }
+        .slide.active{
+            transform:transLatex(0);
+        }
+     
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="slider"> 
+            <div class="slide active" style="background:url(https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
+            <div class="slide" style="background:url(https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"></div>
+            <div class="slide" style="background:url(https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load)"></div>
+        </div>
+        <div class="slider-control"> 
+            <button class="prev">Prev</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+    <script>
+const slider=document.querySelector(".slider");
+const slide=document.querySelectorAll(".slide");
+const prevbtn=document.querySelector(".prev");
+const nextbtn=document.querySelector(".next");
+
+let slideindex=0;//when the page will be loaded
+
+slide[slideindex].classList.add('active');
+
+prevbtn.addEventListener('click',prevSlide);
+nextbtn.addEventListener('click',nextSlide);
+
+
+function prevSlide(){
+slide[slideindex].classList.remove('active');
+
+    slideindex=(slideindex===0) ? slide.length-1:slideindex-1;
+    slide[slideindex].classList.add('active');
+    slider.style.transform=`translatex(-${slideindex*100}%)`
+}
+
+function nextSlide(){
+    slide[slideindex].classList.remove('active');
+
+    slideindex=(slideindex===slide.length-1) ? 0:slideindex+1;
+    slide[slideindex].classList.add('active');
+    slider.style.transform=`translatex(-${slideindex*100}%)`
+}
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unload Event Example</title>
+</head>
+<body>
+
+<h1>Hello, World!</h1>
+
+<script>
+// Function to handle the unload event
+function handleUnload(event) {
+  const confirmationMessage = 'Are you sure you want to leave this page?';
+  (event || window.event).returnValue = confirmationMessage; // For legacy browsers
+  return confirmationMessage;
+}
+
+// Add event listener for the unload event on the window object
+window.addEventListener('unload', handleUnload);
+</script>
+
+</body>
+</html>

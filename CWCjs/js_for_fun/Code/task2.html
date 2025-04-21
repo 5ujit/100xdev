@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toggle Color</title>
+<style>
+   #myDiv {
+       width: 200px;
+       height: 200px;
+       background-color: lightblue;
+   }
+</style>
+</head>
+<body>
+<div id="myDiv"></div>
+<button onclick="toggleColor()">Toggle Color</button>
+
+<script>
+   var isBlue = true;
+   var divElement = document.getElementById('myDiv');
+
+   function toggleColor() {
+       if (isBlue) {
+           divElement.style.backgroundColor = 'lightgreen';
+       } else {
+           divElement.style.backgroundColor = 'lightblue';
+       }
+       isBlue = !isBlue; // Toggle the state
+   }
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        #error {
+  color: red;
+  font-weight: bold;
+}
+    </style>
+    <title>Error Handling Example</title>
+    
+  </head>
+  <body>
+    <h1>Error Handling Example</h1>
+    <form id="calculator">
+      <label for="number1">Number 1:</label>
+      <input type="number" id="number1" name="number1" />
+      <br />
+      <label for="number2">Number 2:</label>
+      <input type="number" id="number2" name="number2" />
+      <br />
+      <button type="submit">Calculate</button>
+    </form>
+    <div id="result"></div>
+    <div id="error"></div>
+    <script> 
+    calculatorForm = document.getElementById("calculator");
+const resultDiv = document.getElementById("result");
+const errorDiv = document.getElementById("error");
+
+calculatorForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const number1 = parseFloat(document.getElementById("number1").value);
+  const number2 = parseFloat(document.getElementById("number2").value);
+
+  try {
+    if (isNaN(number1) || isNaN(number2)) {
+      throw new Error("Please enter valid numbers.");
+    }
+
+    if (number2 === 0) {
+      throw new Error("Cannot divide by zero.");
+    }
+
+    const result = number1 / number2;
+    resultDiv.textContent = `Result: ${result}`;
+    errorDiv.textContent = "";
+  } catch (error) {
+    errorDiv.textContent = error.message;
+  }
+});</script>
+    
+    
+   
+  </body>
+</html>

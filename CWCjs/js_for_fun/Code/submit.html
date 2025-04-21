@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Event</title>
+</head>
+<body>
+
+<form id="myForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br>
+  
+  <button type="submit">Submit</button>
+</form>
+
+<div id="eventInfo"></div>
+
+<script>
+// Function to display event information
+function displayEventInformation(eventType) {
+  const eventInfoDiv = document.getElementById('eventInfo');
+  eventInfoDiv.innerHTML = `
+    <p>${eventType} event occurred.</p>
+  `;
+}
+
+// Add event listener for submit event on the form
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission behavior
+  
+  displayEventInformation('Submit');
+  
+  // Perform form validation or other actions here
+});
+</script>
+
+</body>
+</html>

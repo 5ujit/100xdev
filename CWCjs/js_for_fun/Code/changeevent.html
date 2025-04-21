@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Event</title>
+</head>
+<body>
+
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br>
+  
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age"><br>
+  
+  <label>Gender:</label>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  
+  <label for="newsletter">Subscribe to Newsletter:</label>
+  <input type="checkbox" id="newsletter" name="newsletter"><br>
+  
+  <label for="city">City:</label>
+  <select id="city" name="city">
+    <option value="new-york">New York</option>
+    <option value="los-angeles">Los Angeles</option>
+    <option value="chicago">Chicago</option>
+    <option value="houston">Houston</option>
+  </select>
+</form>
+
+<div id="eventInfo"></div>
+
+<script>
+// Function to display event information
+function displayEventInformation(eventType, fieldName, fieldValue) {
+  const eventInfoDiv = document.getElementById('eventInfo');
+  eventInfoDiv.innerHTML += `
+    <p>${eventType} event occurred on field: ${fieldName}</p>
+    <p>Field Value: ${fieldValue}</p>
+  `;
+}
+
+// Add event listener for change event on form elements
+const formElements = document.querySelectorAll('input, select');
+formElements.forEach(element => {
+  element.addEventListener('change', function(event) {
+    displayEventInformation('Change', event.target.name, event.target.value);
+  });
+});
+</script>
+
+</body>
+</html>
