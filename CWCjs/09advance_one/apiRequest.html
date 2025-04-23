@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+</head>
+<body>
+
+<h2>Card</h2>
+
+<div class="card">
+  <img src="" alt="Avatar" style="width:100%">
+    <h4> <b>
+
+    </b> </h4>
+    <p>Architect & Engineer</p> 
+    <p id="followers"></p> 
+
+  </div>
+</div>
+
+  </body>
+  
+  
+  <script>
+    let dp
+    const reqUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest()
+    xhr.open("GET", reqUrl);
+    xhr.onreadystatechange = function()  {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(typeof data);
+        console.log(data.followers);
+        console.log(data.bio, " 👉 this is bio");
+      let img= document.querySelector(".card img")
+       img.src=data.avatar_url
+       let name =document.querySelector(".card h4 b")
+       name.textContent=data.name;
+
+       let followers = document.getElementById("followers")
+        followers.textContent=data.followers;  
+    //   let followers.textContent = `Followers: ${data.followers}`;  
+
+      }
+    };
+    xhr.send();// this is mine 
+  </script> 
+</html>

@@ -1,7 +1,3 @@
-const startInerval = () => {
-  intervalId = setInterval(randomPrint, 1000, "hello"); // ✅ ID stored
-  console.log("Interval Started");
-};
 
 
 
@@ -10,21 +6,17 @@ const startInerval = () => {
 
 
 
-
-
-
-
-
-
-
-forget every thing tell me one i am able to understand or not okey 
-
- 1 >>const startInerval = () => {
- 2>> intervalId = setInterval(randomPrint, 1000, "hello"); // ✅ ID stored
- 3>> console.log("Interval Started");
-4>>};
-
-in first line we set the varible one name "startInerval" in thie we made one funcion without var ,let ,const (intervalId) we store what ever it generated form setInterval(randomPrint, 1000, "hello");
-
-
-tell me why can we do relly this whout var ,cosnt let diclar one varible 
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.followers);
+        }
+    }
+    xhr.send();
+</script> // this is given by instructor 
