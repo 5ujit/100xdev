@@ -1,35 +1,86 @@
-/*const randomConlor =function (){
-  hex='0123456789ABCDEF'
-  let color ='#'
-  for(let i= 0; i<6; i++){
-    color = color+ hex[(Math.random()*16)]
+const randomColor =()=>{
+  const hex= "0123456789ABCDEF"
+  let color= "#"
+  for(let i=0; i<6; i++){
+    const index=Math.floor(Math.random()*hex.length);
+    color +=hex[index];
   }
   return color;
+};
+
+let colorChangeInterval; // Global vaivle 
+
+const startChangingColor=()=>{
+  if(!colorChangeInterval){
+    colorChangeInterval=setInterval(()=>{
+      const newColor= randomColor();
+      document.body.style.backgroundColor= newColor;
+      
+      document.getElementById('colorCode').innerHTML=`Generated Color: ${newColor}`;
+
+    },1000);
+  }
 }
 
-document.querySelector("#start").addEventListener()
-*/
+const stopChangingColor=()=>{
+  clearInterval(colorChangeInterval);
+  colorChangeInterval= null ; //reset
+}
 
-/**
- * I want to know why we use this each term like
- * I understood this =>>
-document.querySelector("#start").addEventListener()
- but i want to know the code mean which we used upper each term plss explain me okey  
- */
+document.querySelector("#start").addEventListener("click",startChangingColor);
 
+document.querySelector("#stop").addEventListener("click",stopChangingColor);
 
 
- const generatePassword = function () {
-    const letters = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=.>,<``~";
-    let password = "";
-  
-    for (let i = 0; i < 6; i++) {
-      const index = Math.floor(Math.random() * letters.length);
-      password += letters[index];
-    }
-  
-    return password;
-  };
-  
-  console.log(generatePassword());
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const randomColor = function () {
+//   const hex = '0123456789ABCDEF';
+//   let color = '#';
+//   for (let i = 0; i < 6; i++) {
+//     const index = Math.floor(Math.random() * hex.length);
+//     color += hex[index];
+//   }
+//   return color;
+// };
+
+// // console.log(randomColor());
+
+
+// const startChangingColor= ()=>{
+//   document.body.style.backgroundColor= randomColor();
+// }
+
+// const stotChangingColor=()=>{
+//   clearInterval(colorChangeInterval);
+// }
+
+
+// document.querySelector("#start").addEventListener("click", function () {
+//   const newColor = randomColor();
+//   document.body.style.backgroundColor = newColor;
+//   document.getElementById("colorCode").innerText = `Generated Color: ${newColor}`;
+// });
+
+// document.querySelector("#stop").addEventListener
+// ("click",stotChangingColor)
+
+
+
