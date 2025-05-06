@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    font-family: 'Roboto',sans-serif;
+}
+
+.count{
+    font-size: 3rem;
+}
+
+.changeby{
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    margin: 16px;
+
+}
