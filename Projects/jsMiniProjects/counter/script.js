@@ -4,6 +4,7 @@ const plusBtn = document.querySelector(".plus-btn");
 const changeBy= document.querySelector('.changeby');
 
 const reset = document.querySelector(".reset");
+
 plusBtn.addEventListener("click", () => {
   const countVal = parseInt(count.innerText);
   const  chageByvalue = parseInt(changeBy.value)
