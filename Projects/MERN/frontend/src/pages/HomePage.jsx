@@ -11,9 +11,10 @@ const HomePage = () => {
       try {
         const res = await fetch("http://localhost:5001/api/notes")
         const data= await  res.json();
-        
+        console.log(data);
       } catch (error) {
-        
+        console.log(first);
+                
       }
 
     } 
