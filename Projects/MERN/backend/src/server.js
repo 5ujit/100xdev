@@ -35,8 +35,4 @@ connectDB().then(() => {
   });
 });
 
-/**
- * MONGODB_URL=mongodb+srv://sujitsrivastav399:n9tIDrtr0xlnGlwv@cluster0.byrjb.mongodb.net/chatdb?retryWrites=true&w=majority&appName=Cluster0
 
-
- */
