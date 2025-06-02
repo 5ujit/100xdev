@@ -11,8 +11,8 @@ const NoteDetailpage = () => {
   const navigage = useNavigate();
 
   const { id } = useParams();
-  // console.log({  id});
-  // console.log( "id is here ", id);
+  console.log({  id});
+  console.log( "id is here ", id);
   
   useEffect(() => {
     const fetchNote = async () => {
