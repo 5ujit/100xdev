@@ -1,7 +1,34 @@
-package Array;
-
 import java.util.Arrays;
 
+//packimport java.util.Arrays;
+
+public class Swap {
+    public static void main(String[] args) {
+         int[] arr = {1, 2, 34, 9, 18};  // Array declaration inside main method
+
+        swap(arr, 1, 3);  // Swap elements at index 1 and 3
+
+        System.out.println(Arrays.toString(arr));  // Print the modified array
+    }
+
+    // Method to swap two elements in the array
+    static void swap(int[] arr, int a, int b) {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*
 public class Swap {
     public static void main(String[] args) {
         int []arr ={10,20,30,40,50};
@@ -38,3 +65,4 @@ static void reverse(int[] arr ){
 
 
 }
+*/
