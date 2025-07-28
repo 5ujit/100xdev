@@ -1,0 +1,22 @@
+{
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "description": "This is a simple todo application backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sujit",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "epress": "^0.0.1-security",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
